@@ -10,13 +10,14 @@ echo $DISPLAY
 # If you’re running the container on Linux and want to see the GUI window and 
 # If $DISPLAY exists and /tmp/.X11-unix is present
 # Enable X11 Forwarding
-# Allow Docker to access your display: On Linux host: and do this before running devcontainer on vscode
+# Allow Docker to access your display: On Linux host: 
+# And do this before running devcontainer on vscode (on the actual linux terminal)
 
 xhost +local:docker
 
 # Enforce Software Rendering via Mesa (LLVMpipe) - done in devcontainer.json "run Args"
 # Confirm It's Using Software Renderer
-# Run inside the devcontainer:
+# Run inside the devcontainer (devcontainer terminal):
 
 glxinfo | grep -i render
 
